@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aboutway</title>
+
+<!-- Favicon Premium Force Update (Tampilan Normal) -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/LOGO aboutway.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/logoway.png">
+    <link rel="apple-touch-icon" href="images/logoway.png?v=99">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ==========================================================================
+       1. HEADER NAVIGATION (NAVBAR UTAMA)
+       ========================================================================== -->
+    <nav>
+        <div class="logo">
+            <img src="images/LOGO aboutway.png" alt="AboutWay Logo">
+            <div class="logo-text">
+                <span>ABOUTWAY</span>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu Toggle Button -->
+        <button class="mobile-menu-toggle" aria-label="Toggle Navigation" onclick="toggleMenu()">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+
+        <ul class="nav-links">
+            <li><a href="#about" onclick="closeMenu()">About</a></li>
+            <li><a href="#experience" onclick="closeMenu()">Experience</a></li>
+            <li><a href="#showreel" onclick="closeMenu()">Showreel</a></li>
+            <li><a href="#projects" onclick="closeMenu()">Professional</a></li>
+            <li><a href="#academic-projects" onclick="closeMenu()">Academic</a></li>
+            <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- ==========================================================================
+       2. HERO SECTION (HALAMAN DEPAN & SLIDER FOTO OTOMATIS)
+       ========================================================================== -->
+    <section class="hero">
+        <div class="hero-text">
+            <span class="hero-tag">Video and Cameraman</span>
+            <h1>Crafting Visual Stories Through Video, Photography & Creative Content</h1>
+            <p>I help brands, companies, and organizations convey their messages through powerful video, photography, and content strategies.</p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn-primary">View Projects</a>
+                <a href="#contact" class="btn-secondary">Contact Me</a>
+            </div>
+        </div>
+        
+        <!-- Slider Foto Otomatis -->
+        <div class="hero-image-slider">
+            <img src="images/fotoway1.JPG" alt="Wahyu Kurniawan 1" class="slide active">
+            <img src="images/fotoway2.jpeg" alt="Wahyu Kurniawan 2" class="slide">
+            <img src="images/fotoway3.jpg" alt="Wahyu Kurniawan 3" class="slide">
+            <img src="images/fotoway4.jpg" alt="Wahyu Kurniawan 4" class="slide">
+        </div>
+    </section>
+
+
+    <!-- ==========================================================================
+       3. ABOUT ME SECTION (PROFIL DWIBAHASA + TECHNICAL SKILLS DENGAN LOGO & RATING)
+       ========================================================================== -->
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-container">
+            <div class="about-main-layout" style="display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start; max-width: 1100px; margin: 0 auto; padding: 20px;">
+                
+                <!-- Kolom Foto Profil About -->
+                <div class="about-profile-image" style="flex: 1; min-width: 280px; display: flex; justify-content: center;">
+                    <img src="images/fotoway3.jpg" alt="Wahyu Kurniawan Profile" style="width: 100%; max-width: 350px; height: auto; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); object-fit: cover; border: 2px solid #d4af37;">
+                </div>
+                
+                <!-- Kolom Teks Konten -->
+                <div class="about-content" style="flex: 1.5; min-width: 300px;">
+                    <!-- Versi Bahasa Inggris -->
+                    <div class="lang-en" style="margin-bottom: 25px; border-left: 3px solid #d4af37; padding-left: 15px;">
+                        <p class="about-text" style="font-size: 15px; line-height: 1.6; color: #fff;">
+                            Hello, I'm Wahyu Kurniawan, a Multimedia Content Specialist and a graduate of the Multimedia and Digital Engineering Study Program at the Jakarta State Polytechnic. I have interests and experience in video editing, videography, photography, branding, and digital content development, with a focus on developing engaging, informative visual content that meets the needs of both audiences and brands.
+                        </p>
+                        <p class="about-text" style="font-size: 15px; line-height: 1.6; color: #aaa; margin-top: 10px; font-style: italic;">
+                            Experienced in content production for social media, live streaming, and corporate branding needs.
+                        </p>
+                    </div>
+
+                    <!-- Versi Bahasa Indonesia -->
+                    <div class="lang-id" style="border-left: 3px solid #444; padding-left: 15px;">
+                        <p class="about-text" style="font-size: 15px; line-height: 1.6; color: #ddd;">
+                            Halo, saya Wahyu Kurniawan, seorang Spesialis Konten Multimedia dan lulusan Program Studi Teknik Multimedia dan Digital di Politeknik Negeri Jakarta. Saya memiliki minat dan pengalaman dalam penyuntingan video, videografi, fotografi, branding, serta pengembangan konten digital, dengan fokus menciptakan konten visual yang menarik dan informatif untuk kebutuhan audiens maupun brand.
+                        </p>
+                        <p class="about-text" style="font-size: 15px; line-height: 1.6; color: #999; margin-top: 10px; font-style: italic;">
+                            Berpengalaman dalam produksi konten untuk media sosial, siaran langsung (live streaming), serta kebutuhan branding perusahaan.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SUB-BAGIAN: TECHNICAL SKILLS DENGAN LOGO SOFTWARE & INDIKATOR RATING -->
+            <div class="skills-showcase">
+                <h4>Technical Skills & Tools</h4>
+                <div class="skills-grid">
+                    
+                    <!-- CapCut -->
+                    <div class="skill-tag">
+                        <img src="images/LOGO CAPCUT.webp" alt="CapCut LOGO" class="software-logo">
+                        <div class="skill-info">
+                            <span class="skill-name">CapCut</span>
+                            <div class="rating-stars" title="Advanced">⭐⭐⭐⭐⭐</div>
+                        </div>
+                    </div>
+
+                    <!-- Canva -->
+                    <div class="skill-tag">
+                        <img src="images/LOGO CANVA.webp" alt="Canva LOGO" class="software-logo">
+                        <div class="skill-info">
+                            <span class="skill-name">Canva</span>
+                            <div class="rating-stars" title="Advanced">⭐⭐⭐⭐★</div>
+                        </div>
+                    </div>
+
+                    <!-- vMix -->
+                    <div class="skill-tag">
+                        <img src="images/LOGO VMIX.png" alt="vMix LOGO" class="software-logo">
+                        <div class="skill-info">
+                            <span class="skill-name">vMix Broadcaster</span>
+                            <div class="rating-stars" title="Advanced">⭐⭐⭐⭐★</div>
+                        </div>
+                    </div>
+
+                    <!-- OBS Studio -->
+                    <div class="skill-tag">
+                        <img src="images/LOGO OBS.png" alt="OBS LOGO" class="software-logo">
+                        <div class="skill-info">
+                            <span class="skill-name">OBS Studio</span>
+                            <div class="rating-stars" title="Intermediate">⭐⭐⭐★★</div>
+                        </div>
+                    </div>
+
+                    <!-- Blender -->
+                    <div class="skill-tag">
+                        <img src="images/LOGO BLENDER" alt="Blender LOGO" class="software-logo">
+                        <div class="skill-info">
+                            <span class="skill-name">Blender 3D</span>
+                            <div class="rating-stars" title="Intermediate">⭐⭐⭐★★</div>
+                        </div>
+                    </div>
+
+                    <!-- Maya -->
+                    <div class="skill-tag">
+                        <img src="images/LOGO MAYA.jpg" alt="Maya LOGO" class="software-logo">
+                        <div class="skill-info">
+                            <span class="skill-name">Autodesk Maya</span>
+                            <div class="rating-stars" title="Intermediate">⭐⭐⭐★★</div>
+                        </div>
+                    </div>
+
+                    <!-- VS Code -->
+                    <div class="skill-tag">
+                        <img src="images/LOGO VISUAL STUDIO CODE.png" alt="VSCode LOGO" class="software-logo">
+                        <div class="skill-info">
+                            <span class="skill-name">VS Code (HTML/CSS)</span>
+                            <div class="rating-stars" title="Basic">⭐⭐★★★</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Tombol Navigasi Bagian About -->
+        <div class="section-nav-buttons">
+            <a href="#" class="nav-btn btn-top" title="Back to Top">↑ Top</a>
+            <a href="#experience" class="nav-btn btn-next">Next: Experience →</a>
+        </div>
+    </section>
+
+
+    <!-- ==========================================================================
+       4. STATS SECTION (COUNTER ANGKA PENGALAMAN)
+       ========================================================================== -->
+    <section class="stats">
+        <div class="stat-card">
+            <h3>3</h3>
+            <p>Years Experience</p>
+        </div>
+        <div class="stat-card">
+            <h3>50+</h3>
+            <p>Projects Completed</p>
+        </div>
+        <div class="stat-card">
+            <h3>5+</h3>
+            <p>Brands Handled</p>
+        </div>
+    </section>
+
+
+    <!-- ==========================================================================
+       5. EXPERIENCE SECTION (RIWAYAT KERJA & KBN / BRIN)
+       ========================================================================== -->
+    <section id="experience">
+        <h2 class="section-title">Experience</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>Kilau Berlian Nusantara (KBN)</h3>
+                <span class="card-date">2025 - Present</span>
+                <p>Video Editor, Cameraman, and Multimedia Content Specialist responsible for producing creative content for Montenegro Cigars Indonesia, GEMPITA, Cigar Institute by KCI, and FTNews.</p>
+            </div>
+            <div class="card">
+                <h3>Badan Riset dan Inovasi Nasional (BRIN)</h3>
+                <span class="card-date">2024 Okt - 2025 Feb</span>
+                <p>Intern Video Editor and Cameraman, Live Streaming Operator involved in news content production and live broadcast operations using vMix.</p>
+            </div>
+        </div>
+
+        <!-- Tombol Navigasi Bagian Experience -->
+        <div class="section-nav-buttons">
+            <a href="#about" class="nav-btn btn-back">← Back: About</a>
+            <a href="#" class="nav-btn btn-top" title="Back to Top">↑ Top</a>
+            <a href="#showreel" class="nav-btn btn-next">Next: Showreel →</a>
+        </div>
+    </section>
+
+
+    <!-- ==========================================================================
+       6. SHOWREEL SECTION (VIDEO UTAMA TAHUN 2026)
+       ========================================================================== -->
+    <section id="showreel">
+        <h2 class="section-title">Showreel 2026</h2>
+        <div class="video-box">
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Wahyu Kurniawan Showreel" allowfullscreen></iframe>
+        </div>
+
+        <!-- Tombol Navigasi Bagian Showreel -->
+        <div class="section-nav-buttons">
+            <a href="#experience" class="nav-btn btn-back">← Back: Experience</a>
+            <a href="#" class="nav-btn btn-top" title="Back to Top">↑ Top</a>
+            <a href="#projects" class="nav-btn btn-next">Next: Professional →</a>
+        </div>
+    </section>
+
+
+    <!-- ==========================================================================
+       7. FEATURED PROJECTS SECTION (PORTFOLIO MEDIA PROFESIONAL)
+       ========================================================================== -->
+    <section id="projects">
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-subtitle">Selected works across broadcasting, branding, digital media, live streaming, photography, videography, and content production.</p>
+        
+        <!-- SUB-KARTU: BRIN -->
+        <div class="company-card">
+            <div class="company-title">
+                <img src="images/LOGO BRIN.png" alt="BRIN Logo" class="company-logo">
+                <div>
+                    <span class="company-tag">Broadcast Media</span>
+                    <h3>BRIN</h3>
+                    <p>Video Editor & Cameraman, Live Streaming Operator. Produksi program berita, dokumenter, dan live streaming nasional.</p>
+                </div>
+            </div>
+            <div class="project-list">
+                <div class="project-card">
+                    <div class="project-image-wrapper">
+                        <img src="images/Brindailynews.png" alt="BRIN Daily">
+                    </div>
+                    <div class="project-content">
+                        <h4>BRIN Daily</h4>
+                        <p>Program berita harian resmi dari Badan Riset dan Inovasi Nasional yang mengulas info riset terkini.</p>
+                        <a href="https://www.youtube.com/watch?v=fzufCEGIsko" target="_blank" class="btn-primary">Watch Video</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image-wrapper">
+                        <img src="images/KabarKawasanBRIN.png" alt="Kabar Kawasan BRIN">
+                    </div>
+                    <div class="project-content">
+                        <h4>Kabar Kawasan BRIN</h4>
+                        <p>Program informasi mendalam mengenai perkembangan dan fasilitas berbagai kawasan riset BRIN di Indonesia.</p>
+                        <a href="https://www.youtube.com/watch?v=UR5ph_5MvO4&t=1s" target="_blank" class="btn-primary">Watch Video</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image-wrapper">
+                        <img src="images/Brintvlive.png" alt="BRIN TV Live">
+                    </div>
+                    <div class="project-content">
+                        <h4>BRIN TV Live</h4>
+                        <p>Manajemen teknis operasi penyiaran dan live streaming berbagai konferensi ilmiah serta seminar nasional.</p>
+                        <a href="https://www.youtube.com/watch?v=PF-42e3OiC4" target="_blank" class="btn-primary">Watch Video</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- SUB-KARTU: KBN - GEMPITA -->
+        <div class="company-card">
+            <div class="company-title">
+                <img src="images/LOGO KBN.png" alt="KBN Logo" class="company-logo">
+                <div>
+                    <span class="company-tag">Multimedia Content Specialist</span>
+                    <h3>Kilau Berlian Nusantara (KBN)</h3>
+                    <p>Responsible for end-to-end content production, branding, videography, photography, and social media production.</p>
+                </div>
+            </div>
+
+            <div class="brand-header">
+                <img src="images/LOGO GEMPITA.png" alt="GEMPITA Logo" class="brand-logo-small">
+                <h4>GEMPITA</h4>
+            </div>
+
+            <div class="project-list">
+                <div class="project-card">
+                    <div class="project-image-wrapper">
+                        <img src="images/White Chair.png" alt="White Chair">
+                    </div>
+                    <div class="project-content">
+                        <h4>White Chair</h4>
+                        <p>Program diskusi kolaboratif bersama mahasiswa untuk mengupas tuntas isu-isu sosial, politik, dan kebangsaan.</p>
+                        <a href="https://youtu.be/b1JyQK4I7r0?si=kPeQfC9Osbe9Qucg" target="_blank" class="btn-primary">Watch Video</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image-wrapper">
+                        <img src="images/Gempita Podcast.png" alt="Gempita Podcast">
+                    </div>
+                    <div class="project-content">
+                        <h4>Gempita Podcast</h4>
+                        <p>Program podcast interaktif yang membahas dinamika sosial terkini dengan pembawaan santai namun mendalam.</p>
+                        <a href="https://youtu.be/PZFNbbnsbGA?si=OpRXqx4eViNvA5D2" target="_blank" class="btn-primary">Watch Video</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image-wrapper">
+                        <img src="images/Kita Kasih Paham.png" alt="Kita Kasih Paham">
+                    </div>
+                    <div class="project-content">
+                        <h4>Kita Kasih Paham</h4>
+                        <p>Produksi konten video kreatif berdurasi pendek (Reels/TikTok) guna mengedukasi publik perihal isu politik nasional dan global.</p>
+                        <a href="https://www.instagram.com/reel/DW5cYDAgadi/" target="_blank" class="btn-primary">Watch Video</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image-wrapper">
+                        <img src="images/Bedah Buku Paradoks Indonesia.png" alt="Bedah Buku Paradoks Indonesia">
+                    </div>
+                    <div class="project-content">
+                        <h4>Bedah Buku Paradoks</h4>
+                        <p>Produksi visual kreatif untuk bedah buku komprehensif "Paradoks Indonesia dan Solusinya" karya Prabowo Subianto.</p>
+                        <a href="https://www.instagram.com/reel/DZIDcfcB8w5/" target="_blank" class="btn-primary">Watch Video</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image-wrapper">
+                        <img src="images/Kopi Waras.png" alt="Kopi Waras">
+                    </div>
+                    <div class="project-content">
+                        <h4>Kopi Waras</h4>
+                        <p>Acara bincang santai yang mengemas isu kebudayaan, sosial, serta opini publik secara segar dan berbobot.</p>
+                        <a href="https://www.instagram.com/reel/DXZHXOwAYzJ/" target="_blank" class="btn-primary">Watch Video</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image-wrapper">
+                        <img src="images/Milenial Berbicara.png" alt="Milenial Berbicara">
+                    </div>
+                    <div class="project-content">
+                        <h4>Milenial Berbicara</h4>
+                        <p>Menyoroti suara, aspirasi, serta peran strategis generasi milenial dalam menggerakkan roda pembangunan nasional.</p>
+                        <a href="https://youtu.be/KMwLeXUDeLo?si=Oj8EBkciG3GzlyAa" target="_blank" class="btn-primary">Watch Video</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SUB-KARTU: KCI (MONTENEGRO & CIGAR INSTITUTE) -->
+        <div class="company-card">
+            <div class="company-title">
+                <img src="images/LOGO KCI.png" alt="KCI Logo" class="company-logo">
+                <div>
+                    <span class="company-tag">Premium Cigar Media & Branding</span>
+                    <h3>Kilau Cigar Indonesia (KCI)</h3>
+                    <p>Produksi konten eksklusif, branding komersial, dokumentasi event premium, serta manajemen fotografi dan kampanye digital.</p>
+                </div>
+            </div>
+
+            <div class="project-list" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px;">
+                <!-- Kolom Montenegro Cigars -->
+                <div class="brand-section" style="margin-top: 0; display: flex; flex-direction: column; height: 100%;">
+                    <div class="brand-header" style="margin-bottom: 15px; display: flex; align-items: center; gap: 12px;">
+                        <img src="images/LOGO MONTENEGROCIGARS.jpg" alt="Montenegro Cigars Logo" class="brand-logo-small" style="width: 35px; height: 35px; object-fit: contain; border-radius: 6px;">
+                        <h4 style="font-size: 18px; color: #d4af37; font-weight: 600; margin: 0;">Montenegro Cigars Indonesia</h4>
+                    </div>
+                    <div class="project-card" style="flex: 1;">
+                        <div class="project-image-wrapper">
+                            <img src="images/Montenegro Cigars promosi.png" alt="Montenegro Brand Promotion">
+                        </div>
+                        <div class="project-content">
+                            <h4>Brand Promotion Video</h4>
+                            <p>Pembuatan video kampanye komersial untuk Montenegro Cigars Indonesia yang menekankan aspek kemewahan dan narasi visual yang kuat.</p>
+                            <a href="https://www.instagram.com/reel/DYjWTFVz1U7/" target="_blank" class="btn-primary">Watch Video</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kolom Cigar Institute -->
+                <div class="brand-section" style="margin-top: 0; display: flex; flex-direction: column; height: 100%;">
+                    <div class="brand-header" style="margin-bottom: 15px; display: flex; align-items: center; gap: 12px;">
+                        <img src="images/LOGO CIGARINSTITUTE.jpg" alt="Cigar Institute Logo" class="brand-logo-small" style="width: 35px; height: 35px; object-fit: contain; border-radius: 6px;">
+                        <h4 style="font-size: 18px; color: #d4af37; font-weight: 600; margin: 0;">Cigar Institute by KCI</h4>
+                    </div>
+                    <div class="project-card" style="flex: 1;">
+                        <div class="project-image-wrapper">
+                            <img src="images/Cigarinstitute edukasi.png" alt="Educational Content">
+                        </div>
+                        <div class="project-content">
+                            <h4>Educational Content Video</h4>
+                            <p>Seri video edukasi premium mengenai tata cara menikmati, kebudayaan khas, serta wawasan mendasar seputar cerutu.</p>
+                            <a href="https://www.instagram.com/reel/DYmQahvTQO0/" target="_blank" class="btn-primary">Watch Video</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SUB-KARTU: FTNEWS -->
+        <div class="company-card">
+            <div class="company-title">
+                <img src="images/LOGO FTNEWS.jpg" alt="FTNEWS Logo" class="company-logo">
+                <div>
+                    <span class="company-tag">Digital News Media</span>
+                    <h3>FTNEWS</h3>
+                    <p>Produksi konten berita digital kreatif, program informatif, serta segmen entertainment pop-culture.</p>
+                </div>
+            </div>
+            <div class="project-list">
+                <div class="project-card">
+                    <div class="project-image-wrapper">
+                        <img src="images/Saksi Mata.png" alt="SAKSI MATA">
+                    </div>
+                    <div class="project-content">
+                        <h4>SAKSI MATA</h4>
+                        <p>Segmen berita investigasi visual tajam yang menyajikan peristiwa riil dan fenomena sosial di tengah masyarakat.</p>
+                        <a href="https://www.facebook.com/reel/1785635025753526/" target="_blank" class="btn-primary">Watch Video</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image-wrapper">
+                        <img src="images/sinea.jpg" alt="SI NEAS">
+                    </div>
+                    <div class="project-content">
+                        <h4>SI NEAS</h4>
+                        <p>Konten review, bedah alur cerita film, serta apresiasi mendalam seputar industri perfilman kreatif Indonesia.</p>
+                        <a href="https://www.facebook.com/reel/1785635025753526/" target="_blank" class="btn-primary">Watch Video</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tombol Navigasi Bagian Professional Projects -->
+        <div class="section-nav-buttons">
+            <a href="#showreel" class="nav-btn btn-back">← Back: Showreel</a>
+            <a href="#" class="nav-btn btn-top" title="Back to Top">↑ Top</a>
+            <a href="#academic-projects" class="nav-btn btn-next">Next: Academic →</a>
+        </div>
+    </section>
+
+
+    <!-- ==========================================================================
+       8. ACADEMIC PROJECTS SECTION (TUGAS AKHIR PNJ & GAME DEVELOPMENT)
+       ========================================================================== -->
+    <section id="academic-projects">
+        <h2 class="section-title">Academic Project</h2>
+        <p class="section-subtitle">Karya pilihan di bidang pengembangan game dan produksi multimedia yang diselesaikan selama masa studi diploma di Politeknik Negeri Jakarta.</p>
+
+        <!-- SUB-KARTU: GAME DECODE -->
+        <div class="company-card">
+            <div class="company-title">
+                <img src="images/decode-logo.png" alt="Logo Game DECODE" class="company-logo" style="background:#222; padding:5px;">
+                <div>
+                    <span class="company-tag">Proyek Riset Tugas Akhir</span>
+                    <h3>DECODE – Game Edukasi 3D</h3>
+                    <p>Sebuah game edukasi 3D interaktif yang dirancang sebagai media pembelajaran sistem sandi pramuka (Sandi Morse, Semaphore, dan Sandi Matematika). Dikembangkan menggunakan metodologi MDLC (Multimedia Development Life Cycle) dengan perangkat lunak Unity dan Blender[cite: 3].</p>
+                </div>
+            </div>
+            
+            <div class="project-list" style="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));">
+                <!-- Gameplay Video -->
+                <div class="project-card">
+                    <div class="project-image-wrapper">
+                        <iframe src="https://drive.google.com/file/d/1BO-MCiys0c95cAYxq0fNY0bKRByJgnQZ/preview" title="Demo Gameplay DECODE" style="position:absolute; top:0; left:0; width:100%; height:100%; border:none;" allowfullscreen></iframe>
+                    </div>
+                    <div class="project-content">
+                        <h4>Cuplikan Gameplay (Video)</h4>
+                        <p>Video demonstrasi komprehensif yang menampilkan mekanisme permainan, rancangan antarmuka pengguna (UI), serta simulasi penyelesaian teka-teki sandi kepramukaan secara langsung.</p>
+                    </div>
+                </div>
+
+                <!-- Galeri Kolase 3D -->
+                <div class="project-card">
+                    <div class="decode-gallery" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; padding: 15px; background: #161616;">
+                        <img src="images/Decode/decode-character1.png" alt="Karakter 1" style="width:100%; height:85px; object-fit:cover; border-radius:6px;" title="Karakter 1">
+                        <img src="images/Decode/decode-character 2.png" alt="Karakter 2" style="width:100%; height:85px; object-fit:cover; border-radius:6px;" title="Karakter 2">
+                        <img src="images/Decode/decode-character 3.png" alt="Karakter 3" style="width:100%; height:85px; object-fit:cover; border-radius:6px;" title="Karakter 3">
+                        <img src="images/Decode/decode-character 4.png" alt="Karakter 4" style="width:100%; height:85px; object-fit:cover; border-radius:6px;" title="Karakter 4">
+                        <img src="images/Decode/decode-character5.png" alt="Karakter 5" style="width:100%; height:85px; object-fit:cover; border-radius:6px;" title="Karakter 5">
+                    
+                        <img src="images/Decode/decode-environment kantor.png" alt="Desain Kantor" style="width:100%; height:85px; object-fit:cover; border-radius:6px;" title="Desain Kantor">
+                        <img src="images/Decode/decode-environment lapangan.png" alt="Desain Lapangan" style="width:100%; height:85px; object-fit:cover; border-radius:6px;" title="Desain Lapangan">
+                        <img src="images/Decode/decode-environment sekolahan.png" alt="Desain Sekolahan" style="width:100%; height:85px; object-fit:cover; border-radius:6px;" title="Desain Sekolahan">
+                        <img src="images/Decode/decode-environment tenda.png" alt="Desain Area Tenda" style="width:100%; height:85px; object-fit:cover; border-radius:6px;" title="Desain Area Tenda">
+                        
+                        <img src="images/Decode/defensive wall.png" alt="Dinding Pertahanan" style="width:100%; height:85px; object-fit:cover; border-radius:6px;" title="Dinding Pertahanan">
+                        <img src="images/Decode/Binocullars.png" alt="Teropong" style="width:100%; height:85px; object-fit:cover; border-radius:6px;" title="Teropong">
+                        <img src="images/Decode/Pohon 1.png" alt="Model Pohon 1" style="width:100%; height:85px; object-fit:cover; border-radius:6px;" title="Model Pohon 1">
+                        <img src="images/Decode/Pohon 2.png" alt="Model Pohon 2" style="width:100%; height:85px; object-fit:cover; border-radius:6px;" title="Model Pohon 2">
+                    </div>
+                    <div class="project-content">
+                        <h4>Portofolio Aset Produksi 3D</h4>
+                        <p>Kumpulan dokumentasi aset visual 3D berkonsep rendah poligon (*low-poly*) untuk model karakter utama, pemodelan lingkungan modular, serta elemen properti pendukung game yang dirancang menggunakan Blender.</p>
+                        <a href="https://drive.google.com/drive/folders/1hZ9cMevN0-YCBdmrfWLEB6wy0UMMpMTa?usp=sharing" target="_blank" class="btn-secondary" style="text-align:center; border-radius:8px; font-size:13px; padding:10px; margin-top: auto;">Lihat File Mentah / Sisa Aset (Drive)</a>
+                    </div>
+                </div> 
+            </div> 
+        </div> 
+        
+        <!-- SUB-KARTU: GAME UNTIL THE END -->
+        <div class="company-card">
+            <div class="company-title">
+                <img src="images/LOGO UNTIL THE END.png" alt="Logo Until The End" class="company-logo" style="object-fit: contain;">
+                <div>
+                    <span class="company-tag">Pengembangan Game</span>
+                    <h3>Until The End</h3>
+                    <p>Sebuah game petualangan bertahan hidup 2D atmosferik berbasis narasi yang berfokus pada visualisasi konflik sejarah dan ketahanan emosional tokoh utama.</p>
+                </div>
+            </div>
+            <div class="project-list" style="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));">
+                <div class="project-card">
+                    <div class="project-image-wrapper">
+                        <iframe src="https://drive.google.com/file/d/1GE1HOfkvbA6RCKNYYLL9mxoOU_B5MtK0/preview" title="Demo Gameplay Until The End" style="position:absolute; top:0; left:0; width:100%; height:100%; border:none;" allowfullscreen></iframe>
+                    </div>
+                    <div class="project-content">
+                        <h4>Cuplikan Gameplay (Video)</h4>
+                        <p>Video demonstrasi komprehensif yang menampilkan mekanisme utama permainan, perancangan tingkat kesulitan level, pengaturan atmosfer pencahayaan, serta integrasi sistem antarmuka 2D.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image-wrapper">
+                        <img src="images/LOGO UNTIL THE END.png" alt="Pratinjau Sampul Until The End" style="width:100%; height:100%; object-fit: cover;">
+                    </div>
+                    <div class="project-content">
+                        <h4>Versi Build & Mainkan</h4>
+                        <p>Unduh dan mainkan versi *executable build* dari game Until The End untuk merasakan langsung pengalaman mekanik bertahan hidup serta atmosfer mendalam dari cerita yang dibangun.</p>
+                        <a href="https://ngawistudio.itch.io/until-the-end" target="_blank" class="btn-primary" style="text-align:center; margin-top: auto; border-radius: 8px;">Mainkan di Itch.io</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SUB-KARTU: DOKUMENTER AKADEMIK -->
+        <div class="company-card">
+            <div class="company-title">
+                <div class="company-logo" style="background:#222; display:flex; align-items:center; justify-content:center; border-radius:12px; font-weight:bold; color:#d4af37; font-size:24px;">🎥</div>
+                <div>
+                    <span class="company-tag">Produksi Multimedia</span>
+                    <h3>Proyek Video & Multimedia Akademik</h3>
+                    <p>Kumpulan karya video dokumenter kreatif yang diproduksi secara mandiri dan tim untuk memenuhi penugasan perkuliahan praktis.</p>
+                </div>
+            </div>
+            <div class="project-list" style="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));">
+                <div class="project-card">
+                    <div class="project-image-wrapper">
+                        <iframe src="https://www.youtube.com/embed/YVipXMipte8" title="Video Dokumenter Edukasi 5M Covid-19" style="position:absolute; top:0; left:0; width:100%; height:100%; border:none;" allowfullscreen></iframe>
+                    </div>
+                    <div class="project-content">
+                        <h4>Video Dokumenter: Edukasi Protokol Kesehatan 5M</h4>
+                        <p><strong>Peran: Videografer</strong>. Proyek video dokumenter tugas kuliah yang dirancang sebagai media kampanye sosial untuk mengingatkan masyarakat akan pentingnya menerapkan protokol kesehatan 5M pada masa pandemi Covid-19 melalui pendekatan narasi visual yang persuasif dan faktual.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image-wrapper">
+                        <iframe src="https://www.youtube.com/embed/EfY94aqg-sU" title="Video Dokumenter Kebudayaan Era Modern" style="position:absolute; top:0; left:0; width:100%; height:100%; border:none;" allowfullscreen></iframe>
+                    </div>
+                    <div class="project-content">
+                        <h4>Video Dokumenter: Promosi Budaya di Era Teknologi</h4>
+                        <p><strong>Peran: Videografer</strong>. Karya dokumenter perkuliahan yang menyoroti strategi pelestarian serta promosi nilai-nilai kebudayaan lokal agar tetap eksis, relevan, dan berkembang secara dinamis di tengah derasnya arus perkembangan teknologi modern.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tombol Navigasi Bagian Academic Projects -->
+        <div class="section-nav-buttons">
+            <a href="#projects" class="nav-btn btn-back">← Back: Professional</a>
+            <a href="#" class="nav-btn btn-top" title="Back to Top">↑ Top</a>
+            <a href="#contact" class="nav-btn btn-next">Next: Contact →</a>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       9. CONTACT SECTION (INFORMASI SOSIAL MEDIA UTAMA)
+       ========================================================================== -->
+    <section id="contact">
+        <h2 class="section-title">Contact</h2>
+        <div class="contact-box">
+            <div class="contact-item">
+                <span class="icon">📧</span>
+                <div>
+                    <h5>Email</h5>
+                    <a href="mailto:whyukrniawan1807@gmail.com">whyukrniawan1807@gmail.com</a>
+                </div>
+            </div>
+            <div class="contact-item">
+                <span class="icon">📱</span>
+                <div>
+                    <h5>WhatsApp</h5>
+                    <a href="https://wa.me/62838328833308" target="_blank">083832883308</a>
+                </div>
+            </div>
+            <div class="contact-item">
+                <span class="icon">💼</span>
+                <div>
+                    <h5>LinkedIn</h5>
+                    <a href="https://www.linkedin.com/in/wahyu-kurniawan-a6254a24b/" target="_blank">Wahyu Kurniawan</a>
+                </div>
+            </div>
+            <div class="contact-item">
+                <span class="icon">📷</span>
+                <div>
+                    <h5>Instagram</h5>
+                    <a href="https://instagram.com/waydocumentary" target="_blank">@waydocumentary</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ==========================================================================
+       10. FOOTER (HAK CIPTA BAWAHAN SITES)
+       ========================================================================== -->
+    <footer>
+        <p>&copy; 2026 Whyukrniawan. Crafted with precision. All Rights Reserved.</p>
+    </footer>
+
+
+    <!-- ==========================================================================
+       11. BUTTON SCROLL BACK TO TOP (FLOATING WIDGET)
+       ========================================================================== -->
+    <button id="scrollToTop" onclick="goToTop()" aria-label="Back to Top" style="position: fixed; bottom: 30px; right: 30px; width: 45px; height: 45px; background: #d4af37; color: #000000; border: none; border-radius: 50%; font-size: 20px; cursor: pointer; display: none; z-index: 999; box-shadow: 0 4px 15px rgba(212,175,55,0.4); font-weight: bold; transition: all 0.3s ease;">↑</button>
+
+
+    <!-- ==========================================================================
+       12. INTERACTIVE JAVASCRIPT LOGIC (ENGINE OPERASI WEB)
+       ========================================================================== -->
+    <script>
+        // --- Operasi Kendali Menu Navigasi HP ---
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            const toggleBtn = document.querySelector('.mobile-menu-toggle');
+            navLinks.classList.toggle('active');
+            toggleBtn.classList.toggle('active');
+        }
+
+        function closeMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            const toggleBtn = document.querySelector('.mobile-menu-toggle');
+            navLinks.classList.remove('active');
+            toggleBtn.classList.remove('active');
+        }
+
+        // --- Siklus Pergantian Gambar Otomatis (Hero Slider) ---
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.hero-image-slider .slide');
+        const slideInterval = 4000; // 4 detik per foto
+
+        function nextSlide() {
+            if(slides.length === 0) return;
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        if(slides.length > 0) {
+            setInterval(nextSlide, slideInterval);
+        }
+
+        // --- Deteksi Amplitudo Gulir Layar (Floating Back To Top) ---
+        const topBtn = document.getElementById("scrollToTop");
+        
+        window.onscroll = function() {
+            if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+                topBtn.style.display = "block";
+            } else {
+                topBtn.style.display = "none";
+            }
+        };
+
+        function goToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
