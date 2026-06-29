@@ -974,6 +974,6 @@ footer p {
     /* ==========================================================================
        TRIK FORCE TRANSPARAN UNTUK LOGO DI NAVIBAR HITAM
        ========================================================================== */
-    filter: invert(1) Pages;
+    filter: invert(1);
     mix-blend-mode: screen;
 }
