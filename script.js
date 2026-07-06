@@ -11,7 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
     setupHeroSlider();
     setupScrollReveal();
     setupLightbox();
+    setupCompanyLogoTriggers();
     setupScrollToTop();
+
     
     // Bind functions to window context for inline HTML onclick handlers
     window.toggleMenu = toggleMenu;
@@ -20,6 +22,21 @@ document.addEventListener('DOMContentLoaded', () => {
     window.filterProjects = filterProjects;
     window.setLanguage = setLanguage;
 });
+
+function setupCompanyLogoTriggers() {
+    document.querySelectorAll('.company-logo, .brand-logo-small').forEach(img => {
+        img.addEventListener('click', () => {
+            const companyCard = img.closest('.company-card');
+            if (!companyCard) return;
+            companyCard.classList.toggle('active');
+            const companyTitle = companyCard.querySelector('.company-title');
+            if (companyTitle) {
+                companyTitle.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+        img.setAttribute('title', 'Klik logo untuk lihat profil perusahaan');
+    });
+}
 
 // --- Scroll Styling for Navbar ---
 function setupNavbarScroll() {
@@ -130,7 +147,7 @@ function filterProjects(category) {
 
 // --- Image Lightbox Modal Overlay ---
 function setupLightbox() {
-    const galleryImages = document.querySelectorAll('.decode-gallery img, .project-image-wrapper img');
+    const galleryImages = document.querySelectorAll('.decode-gallery img, .project-image-wrapper img, .company-logo, .brand-logo-small, .software-logo, .logo img');
     
     // Create element structure
     let lightbox = document.querySelector('.lightbox-modal');
@@ -151,12 +168,12 @@ function setupLightbox() {
     
     galleryImages.forEach(img => {
         img.addEventListener('click', () => {
-            const src = img.getAttribute('src');
+            const src = img.getAttribute('data-full') || img.getAttribute('src');
             const caption = img.getAttribute('title') || img.getAttribute('alt') || '';
-            
+
             if (src) {
                 lightboxImg.setAttribute('src', src);
-                lightboxCaption.textContent = caption;
+                lightboxCaption.textContent = caption;  
                 lightbox.classList.add('active');
             }
         });
@@ -217,3 +234,5 @@ function setupScrollToTop() {
 function goToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+
+

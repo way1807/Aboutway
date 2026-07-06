@@ -10,26 +10,44 @@
     --bg-secondary: #0b0b0b;
     --bg-card: rgba(18, 18, 18, 0.6);
     --bg-card-hover: rgba(26, 26, 26, 0.8);
-    
-    /* Elegant Brushed Gold Accent Palette */
     --accent-gold-light: #f3d28a;
     --accent-gold: #c5a059;
     --accent-gold-dark: #9d7b3e;
     --accent-gold-glow: rgba(197, 160, 89, 0.15);
-    
-    /* Text Color Tokens */
     --text-primary: #ffffff;
     --text-secondary: #a3a3a3;
     --text-muted: #666666;
-    
-    /* Layout & Decoration */
     --border-color: rgba(255, 255, 255, 0.05);
     --border-gold: rgba(197, 160, 89, 0.25);
     --border-gold-hover: rgba(197, 160, 89, 0.6);
-    
     --shadow-premium: 0 20px 40px rgba(0, 0, 0, 0.7);
     --shadow-gold: 0 10px 30px rgba(197, 160, 89, 0.1);
     --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+
+    /* Brand Accent Colors */
+    --kbn-yellow-primary: #f1c40f;
+    --kbn-yellow-glow: rgba(241, 196, 15, 0.28);
+    --kbn-yellow-dark: #d4ac0d;
+    --pe-pink-primary: #dc8cce;
+    --pe-pink-glow: rgba(220, 140, 206, 0.35);
+    --pe-pink-dark: #c16eb2;
+
+    /* New Brand Accent Colors */
+    --brintv-red-primary: #e53e3e;
+    --brintv-red-glow: rgba(229, 62, 62, 0.28);
+    --brintv-red-dark: #9b2c2c;
+    --gempita-red-primary: #e53e3e;
+    --gempita-red-glow: rgba(229, 62, 62, 0.28);
+    --gempita-red-dark: #9b2c2c;
+    --kci-brown-primary: #935125;
+    --kci-brown-glow: rgba(147, 81, 37, 0.28);
+    --kci-brown-dark: #6e3917;
+    --ftnews-blue-primary: #2980b9;
+    --ftnews-blue-glow: rgba(41, 128, 185, 0.28);
+    --ftnews-blue-dark: #1b4f72;
+    --web-cyan-primary: #5faec9;
+    --web-cyan-glow: rgba(95, 176, 209, 0.28);
+    --web-cyan-dark: #3a7d97;
 }
 
 * {
@@ -49,15 +67,12 @@ body {
     color: var(--text-primary);
     overflow-x: hidden;
     line-height: 1.6;
-    background-image: 
+    background-image:
         radial-gradient(circle at 10% 20%, rgba(197, 160, 89, 0.03) 0%, transparent 40%),
         radial-gradient(circle at 90% 80%, rgba(197, 160, 89, 0.03) 0%, transparent 40%);
     background-attachment: fixed;
 }
 
-/* ==========================================================================
-   1. NAVIGATION HEADER (NAVBAR)
-   ========================================================================== */
 nav {
     position: fixed;
     top: 0;
@@ -92,8 +107,11 @@ nav.scrolled {
     width: 40px;
     height: 40px;
     object-fit: contain;
-    filter: invert(1);
-    mix-blend-mode: screen;
+    padding: 2px;
+    border-radius: 10px;
+    background: transparent;
+    border: 1px solid rgba(197, 160, 89, 0.25);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.25);
     transition: var(--transition-smooth);
 }
 
@@ -345,9 +363,312 @@ nav ul.nav-links li a:hover::after {
     transform: scale(1);
 }
 
-/* ==========================================================================
-   3. SECTIONS COMMON STRUCTURE
-   ========================================================================== */
+section {
+    padding: 80px 80px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.project-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 26px;
+}
+
+.company-card {
+    background: linear-gradient(180deg, rgba(14,14,14,0.95), rgba(10,10,10,0.95));
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.company-title {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    margin-bottom: 35px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 25px;
+}
+
+.company-title > div {
+    flex: 1;
+}
+
+.company-card h3,
+.brand-header h4,
+.project-content h4 {
+    letter-spacing: -0.3px;
+}
+
+/* ==========================
+   Responsive: Mobile rules
+   ========================== */
+@media (max-width: 900px) {
+    nav {
+        padding: 12px 18px;
+    }
+
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
+    .nav-container {
+        gap: 12px;
+    }
+
+    nav ul.nav-links {
+        position: fixed;
+        top: 64px;
+        right: 0;
+        height: calc(100% - 64px);
+        width: 78%;
+        max-width: 340px;
+        background: linear-gradient(180deg, rgba(5,5,5,0.96), rgba(10,10,10,0.98));
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 22px 18px;
+        gap: 12px;
+        transform: translateX(100%);
+        transition: transform 0.28s ease;
+        z-index: 1200;
+    }
+
+    nav ul.nav-links.active {
+        transform: translateX(0);
+    }
+
+    nav ul.nav-links li a {
+        font-size: 16px;
+        padding: 10px 6px;
+        display: block;
+        width: 100%;
+        color: var(--text-primary);
+    }
+
+    .mobile-menu-toggle.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .mobile-menu-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .mobile-menu-toggle.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .hero {
+        flex-direction: column-reverse;
+        padding: 100px 18px 40px 18px;
+        gap: 28px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+        line-height: 1.2;
+    }
+
+    .hero p {
+        font-size: 15px;
+        max-width: 100%;
+    }
+
+    .hero-image-slider {
+        max-width: 320px;
+        height: 380px;
+        margin: 0 auto;
+    }
+
+    section {
+        padding: 48px 18px;
+    }
+
+    .about-container .about-main-layout {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .about-profile-image img {
+        width: 160px;
+        height: auto;
+        border-radius: 12px;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .project-list {
+        grid-template-columns: 1fr;
+    }
+
+    .company-title {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 12px;
+    }
+
+    .company-logo {
+        width: 72px;
+        height: auto;
+    }
+
+    .btn-primary, .btn-secondary {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 22px;
+    }
+
+    nav ul.nav-links {
+        width: 86%;
+    }
+
+    .hero-image-slider {
+        height: 300px;
+    }
+
+    .logo-text {
+        font-size: 16px;
+    }
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    overflow: hidden;
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(197, 160, 89, 0.35);
+    box-shadow: 0 26px 45px rgba(0,0,0,0.18);
+}
+
+.project-content {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.project-content p {
+    margin-bottom: 18px;
+}
+
+.project-content .btn-primary {
+    margin-top: auto;
+    text-align: center;
+    padding: 12px 18px;
+    font-size: 14px;
+    border-radius: 14px;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.tech-badge {
+    font-size: 12px;
+    font-weight: 700;
+    padding: 6px 12px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 999px;
+    color: var(--accent-gold-light);
+}
+
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 22px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #e8d5a4, #d3b27d);
+    color: #1a1725;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 14px 30px rgba(209,178,125,0.28);
+}
+
+@media (max-width: 1100px) {
+    .hero {
+        padding: 120px 40px 60px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hero-image-slider {
+        max-width: 100%;
+        height: 420px;
+    }
+}
+
+@media (max-width: 880px) {
+    nav {
+        padding: 18px 30px;
+    }
+
+    section {
+        padding: 60px 30px;
+    }
+
+    .company-title {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .company-logo {
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 680px) {
+    nav {
+        padding: 16px 22px;
+    }
+
+    .hero {
+        padding-top: 120px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .project-list,
+    .skills-grid,
+    .contact-box {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-box {
+        padding: 30px;
+    }
+
+    .about-main-layout,
+    .company-title {
+        gap: 20px;
+    }
+}
+
 section {
     padding: 100px 80px;
     max-width: 1400px;
@@ -358,10 +679,11 @@ section {
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 38px;
     font-weight: 800;
-    margin-bottom: 45px;
+    margin-bottom: 18px;
     position: relative;
-    display: inline-block;
+    display: block;
     letter-spacing: -0.5px;
+    line-height: 1.05;
 }
 
 .section-title::after {
@@ -377,11 +699,209 @@ section {
 
 .section-subtitle {
     color: var(--text-secondary);
-    margin-top: -25px;
+    margin-top: 18px;
     margin-bottom: 55px;
-    max-width: 800px;
+    max-width: 760px;
     font-size: 16px;
+    line-height: 1.85;
+    letter-spacing: 0.3px;
+}
+
+#projects {
+    padding-top: 70px;
+}
+
+#projects .company-card {
+    background: linear-gradient(180deg, rgba(18, 18, 18, 0.97), rgba(12, 12, 12, 0.96));
+    border-color: rgba(255, 255, 255, 0.18);
+    box-shadow: 0 32px 85px rgba(0, 0, 0, 0.32);
+    padding: 42px;
+    border-radius: 34px;
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition-smooth);
+}
+
+#projects .company-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top left, rgba(197, 160, 89, 0.08), transparent 32%);
+    pointer-events: none;
+}
+
+#projects .company-card + .company-card {
+    margin-top: 50px;
+}
+
+#projects .company-title {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 26px;
+    border-bottom: none;
+    padding: 28px;
+    margin-bottom: 30px;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+    position: relative;
+    z-index: 1;
+}
+
+#projects .company-title h3 {
+    font-size: 30px;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+#projects .company-card .company-job-list {
+    padding-left: 24px;
+    margin-top: 18px;
+}
+
+#projects .company-card .project-list {
+    gap: 28px;
+    margin-top: 32px;
+}
+
+#projects .project-card {
+    min-height: 400px;
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.14);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03), 0 18px 38px rgba(0, 0, 0, 0.18);
+    border-radius: 28px;
+    overflow: hidden;
+}
+
+#projects .project-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(197, 160, 89, 0.45);
+    box-shadow: 0 30px 62px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(197, 160, 89, 0.08);
+}
+
+#projects .project-image-wrapper {
+    width: 100%;
+    min-height: 260px;
+    overflow: hidden;
+    border-radius: 28px 28px 0 0;
+    background: rgba(255, 255, 255, 0.04);
+    position: relative;
+}
+
+#projects .project-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.45s ease, opacity 0.5s ease-in-out;
+}
+
+#projects .project-image-wrapper:hover img {
+    transform: scale(1.06);
+}
+
+#projects .project-content {
+    padding: 28px 26px 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+#projects .project-content h4 {
+    color: #ffffff;
+    font-size: 20px;
+    margin-bottom: 0;
+}
+
+#projects .project-content p {
+    color: var(--text-secondary);
     line-height: 1.8;
+    margin-bottom: 0;
+}
+
+#projects .project-tech .tech-badge {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.12);
+    color: var(--accent-gold-light);
+}
+
+.kbn-card {
+    border-left: 6px solid var(--kbn-yellow-primary) !important;
+    transition: var(--transition-smooth);
+}
+
+.kbn-card:hover {
+    border-color: #fff176 !important;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.4), 0 0 30px var(--kbn-yellow-glow) !important;
+    transform: translateY(-4px);
+}
+
+.pe-skinpro-card {
+    border-left: 6px solid var(--pe-pink-primary) !important;
+    transition: var(--transition-smooth);
+}
+
+.pe-skinpro-card:hover {
+    border-color: #f1c1e6 !important;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.4), 0 0 30px var(--pe-pink-glow) !important;
+    transform: translateY(-4px);
+}
+
+.kbn-card::before {
+    background: radial-gradient(circle at top left, rgba(241, 196, 15, 0.18), transparent 25%);
+}
+
+.pe-skinpro-card::before {
+    background: radial-gradient(circle at top left, rgba(220, 140, 206, 0.22), transparent 25%);
+}
+
+.kbn-card .company-title {
+    background: rgba(241, 196, 15, 0.08);
+}
+
+.pe-skinpro-card .company-title {
+    background: rgba(220, 140, 206, 0.08);
+}
+
+/* Metallic Gradient Titles */
+.kbn-card .company-title h3 {
+    background: linear-gradient(135deg, #fff9c4 0%, #f1c40f 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
+}
+
+.pe-skinpro-card .company-title h3 {
+    background: linear-gradient(135deg, #f1c1e6 0%, #dc8cce 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
+}
+
+/* Custom Tag Pills */
+.kbn-card .company-tag {
+    background: rgba(241, 196, 15, 0.15) !important;
+    color: #fff9c4 !important;
+    border: 1px solid rgba(241, 196, 15, 0.3) !important;
+    box-shadow: 0 0 10px rgba(241, 196, 15, 0.1) !important;
+}
+
+.pe-skinpro-card .company-tag {
+    background: rgba(220, 140, 206, 0.15) !important;
+    color: #f1c1e6 !important;
+    border: 1px solid rgba(220, 140, 206, 0.3) !important;
+    box-shadow: 0 0 10px rgba(220, 140, 206, 0.1) !important;
+}
+
+/* Custom Bullet Points */
+.kbn-card .company-job-list li::before {
+    color: var(--kbn-yellow-primary) !important;
+    content: '✦' !important;
+    font-size: 14px !important;
+}
+
+.pe-skinpro-card .company-job-list li::before {
+    color: var(--pe-pink-primary) !important;
+    content: '✦' !important;
+    font-size: 14px !important;
 }
 
 /* ==========================================================================
@@ -654,6 +1174,11 @@ span.lang-en, span.lang-id {
     -webkit-backdrop-filter: blur(12px);
 }
 
+.timeline-content {
+    width: 46%;
+    min-width: 320px;
+}
+
 .timeline-content::before {
     content: '';
     position: absolute;
@@ -699,6 +1224,37 @@ span.lang-en, span.lang-id {
     color: var(--text-secondary);
     font-size: 15px;
     line-height: 1.7;
+}
+
+.timeline-content ul {
+    color: var(--text-secondary);
+    margin-top: 18px;
+    padding-left: 20px;
+    line-height: 1.75;
+}
+
+.timeline-content ul li {
+    margin-bottom: 10px;
+}
+
+@media (max-width: 980px) {
+    .timeline {
+        padding: 20px 10px;
+    }
+    .timeline-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .timeline::before {
+        left: 18px;
+    }
+    .timeline-dot {
+        left: 18px;
+    }
+    .timeline-content {
+        width: 100%;
+        margin-top: 30px;
+    }
 }
 
 /* ==========================================================================
@@ -774,52 +1330,326 @@ span.lang-en, span.lang-id {
 }
 
 .company-card:hover {
-    border-color: var(--border-gold);
-    box-shadow: var(--shadow-gold);
+    border-color: var(--border-gold-hover);
+    box-shadow: 0 24px 50px rgba(197, 160, 89, 0.24);
 }
 
-.company-title {
+#projects .company-card {
+    background: rgba(16, 16, 16, 0.96);
+    border-color: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 28px 70px rgba(0, 0, 0, 0.26);
+    padding: 40px;
+}
+
+#projects .company-card + .company-card {
+    margin-top: 46px;
+}
+
+#projects .company-title {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 26px;
+    border-bottom: none;
+    padding: 26px;
+    margin-bottom: 25px;
+}
+
+#projects .company-title h3 {
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+#projects .company-card .company-job-list {
+    padding-left: 24px;
+    margin-top: 18px;
+}
+
+ #projects .project-list {
+    gap: 28px;
+    margin-top: 32px;
+}
+
+#projects .project-card {
+    min-height: 400px;
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.14);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03), 0 18px 38px rgba(0, 0, 0, 0.18);
+    border-radius: 28px;
+    overflow: hidden;
+}
+
+#projects .project-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(197, 160, 89, 0.45);
+    box-shadow: 0 30px 62px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(197, 160, 89, 0.08);
+}
+
+#projects .project-image-wrapper {
+    width: 100%;
+    min-height: 260px;
+    overflow: hidden;
+    border-radius: 28px 28px 0 0;
+    background: rgba(255, 255, 255, 0.04);
+    position: relative;
+}
+
+#projects .project-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.45s ease;
+}
+
+#projects .project-image-wrapper:hover img {
+    transform: scale(1.06);
+}
+
+#projects .project-content {
+    padding: 28px 26px 28px;
+    display: flex;
+
+/* Clickable logos and lightbox modal */
+.company-logo,
+.brand-logo-small,
+.software-logo,
+.logo img {
+    cursor: pointer;
+}
+
+.lightbox-modal {
+    position: fixed;
+    inset: 0;
     display: flex;
     align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.85);
+    z-index: 2200;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+}
+
+.lightbox-modal.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.lightbox-modal .lightbox-content {
+    max-width: 92%;
+    max-height: 86%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+}
+
+.lightbox-modal .lightbox-close {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 34px;
+    line-height: 1;
+    cursor: pointer;
+    text-shadow: 0 4px 18px rgba(0,0,0,0.6);
+}
+
+.lightbox-modal .lightbox-caption {
+    margin-top: 12px;
+    color: var(--text-secondary);
+    font-size: 14px;
+    text-align: center;
+}
+    flex-direction: column;
+    gap: 16px;
+}
+
+#projects .project-content h4 {
+    color: #ffffff;
+    font-size: 20px;
+    margin-bottom: 0;
+}
+
+#projects .project-content p {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 0;
+}
+
+#projects .project-tech {
+    margin-top: 10px;
+}
+
+#projects .company-role {
+    color: var(--accent-gold-light);
+    margin-top: 14px;
+}
+
+#projects .company-tag {
+    color: var(--accent-gold-light);
+    background: rgba(197, 160, 89, 0.12);
+}
+
+.company-card.active {
+    border-color: var(--accent-gold);
+    align-items: flex-start;
     gap: 24px;
     margin-bottom: 35px;
     border-bottom: 1px solid var(--border-color);
     padding-bottom: 25px;
 }
 
-.company-logo {
-    width: 70px;
-    height: 70px;
-    object-fit: contain;
-    border-radius: 16px;
-    border: 1px solid var(--border-color);
-    background: #0f0f0f;
-    padding: 5px;
+.company-title h3 {
+    font-size: 28px;
+    margin-bottom: 0.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    color: #ffffff;
 }
 
-.company-title h3 {
-    font-size: 24px;
+.company-title > div {
+    flex: 1;
+}
+
+.company-title p {
+    max-width: 840px;
+}
+
+.company-card .company-role {
+    margin-top: 16px;
+}
+
+.company-card .company-tag {
+    margin-bottom: 12px;
+}
+
+.project-list.brand-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.brand-section {
+    display: grid;
+    gap: 18px;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 24px;
+    padding: 24px;
+}
+
+.brand-section .project-card {
+    margin: 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.brand-section .project-card:hover {
+    transform: none;
+    box-shadow: none;
+    border-color: rgba(255,255,255,0.08);
+}
+
+.brand-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.brand-header h4 {
+    font-size: 19px;
+    color: var(--accent-gold-light);
     font-weight: 700;
-    margin: 4px 0;
-    color: var(--text-primary);
+    margin: 0;
+}
+
+.brand-logo-small {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+    border-radius: 10px;
+    border: 1px solid rgba(197, 160, 89, 0.25);
+    background: linear-gradient(145deg, rgba(255,255,255,0.03), rgba(255,255,255,0.08));
+    padding: 6px;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.18);
+}
+
+.company-logo,
+.brand-logo-small {
+    cursor: pointer;
+}
+
+.company-logo {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 18px;
+    border: 1px solid rgba(197, 160, 89, 0.25);
+    background: linear-gradient(145deg, rgba(255,255,255,0.03), rgba(255,255,255,0.08));
+    padding: 12px;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.25);
+}
+
+.company-logo:hover,
+.brand-logo-small:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.35);
 }
 
 .company-title p {
     color: var(--text-secondary);
     font-size: 14px;
-    line-height: 1.6;
+    line-height: 1.75;
+    margin-top: 12px;
+}
+
+.company-role {
+    margin: 10px 0 0 0;
+    font-size: 13px;
+    color: var(--accent-gold-light);
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+}
+
+.company-job-list {
+    margin: 20px 0 0;
+    padding-left: 20px;
+    display: grid;
+    gap: 10px;
+}
+
+.company-job-list li {
+    position: relative;
+    padding-left: 20px;
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.company-job-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--accent-gold);
+    font-size: 18px;
+    line-height: 1;
 }
 
 .company-tag {
     display: inline-block;
-    padding: 4px 12px;
-    border-radius: 50px;
-    background: rgba(197, 160, 89, 0.1);
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: rgba(197, 160, 89, 0.12);
     color: var(--accent-gold-light);
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 0.5px;
-    margin-bottom: 6px;
+    margin-bottom: 10px;
     text-transform: uppercase;
 }
 
@@ -835,7 +1665,10 @@ span.lang-en, span.lang-id {
     height: 36px;
     object-fit: contain;
     border-radius: 8px;
-    border: 1px solid var(--border-color);
+    border: 1px solid rgba(197, 160, 89, 0.25);
+    background: transparent;
+    padding: 4px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.2);
 }
 
 .brand-header h4 {
@@ -846,14 +1679,15 @@ span.lang-en, span.lang-id {
 
 .project-list {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 28px;
+    margin-top: 24px;
 }
 
 .project-card {
-    background: rgba(255, 255, 255, 0.01);
-    border: 1px solid var(--border-color);
-    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 24px;
     overflow: hidden;
     transition: var(--transition-smooth);
     display: flex;
@@ -931,6 +1765,93 @@ span.lang-en, span.lang-id {
     border-radius: 10px;
 }
 
+.company-card {
+    background: rgba(16, 16, 16, 0.96);
+    border-color: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 26px 65px rgba(0, 0, 0, 0.26);
+    padding: 40px;
+}
+
+.company-card + .company-card {
+    margin-top: 44px;
+}
+
+.company-card .company-title {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 26px;
+    border-bottom: none;
+    padding: 26px;
+    margin-bottom: 24px;
+}
+
+.company-card .company-title h3 {
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.company-card .company-job-list {
+    padding-left: 26px;
+    margin-top: 18px;
+}
+
+.company-card .company-job-list li {
+    padding-left: 22px;
+}
+
+.company-card .project-list {
+    gap: 28px;
+    margin-top: 22px;
+}
+
+.company-card .project-card {
+    min-height: 360px;
+}
+
+.company-card .project-content {
+    gap: 14px;
+}
+
+.company-card .btn-primary {
+    align-self: flex-start;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.company-card .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(209, 178, 125, 0.24);
+}
+
+.kbn-card {
+    border-left: 6px solid var(--kbn-yellow-primary) !important;
+}
+
+.pe-skinpro-card {
+    border-left: 6px solid var(--pe-pink-primary) !important;
+}
+
+.kbn-card .company-logo {
+    box-shadow: 0 0 25px var(--kbn-yellow-glow) !important;
+    border: 1px solid rgba(241, 196, 15, 0.3) !important;
+}
+
+.pe-skinpro-card .company-logo {
+    box-shadow: 0 0 25px var(--pe-pink-glow) !important;
+    border: 1px solid rgba(220, 140, 206, 0.3) !important;
+}
+
+.kbn-card .company-role {
+    color: #fff9c4 !important;
+}
+
+.pe-skinpro-card .company-role {
+    color: #f1c1e6 !important;
+}
+
+.company-card:hover {
+    border-color: rgba(197, 160, 89, 0.3);
+    box-shadow: 0 30px 75px rgba(0, 0, 0, 0.32);
+}
+
 /* Tech Stack Badges inside Project Cards */
 .project-tech {
     display: flex;
@@ -975,6 +1896,311 @@ span.lang-en, span.lang-id {
     color: #050505 !important;
     border-color: var(--accent-gold) !important;
     transform: scale(1.05) translateY(-3px) !important;
+}
+
+/* ==========================================================================
+   8A. PERSONAL WEB PROJECT CARDS
+   ========================================================================== */
+#projects .personal-web-card {
+    border-left: 6px solid var(--web-cyan-primary) !important;
+    transition: var(--transition-smooth);
+}
+
+#projects .personal-web-card:hover {
+    border-color: #9adcf5 !important;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.4), 0 0 30px var(--web-cyan-glow) !important;
+    transform: translateY(-4px);
+}
+
+#projects .personal-web-card::before {
+    background: radial-gradient(circle at top left, rgba(95, 176, 209, 0.18), transparent 25%) !important;
+}
+
+#projects .personal-web-card .company-title {
+    background: rgba(95, 176, 209, 0.06) !important;
+    border: 1px solid rgba(95, 176, 209, 0.15) !important;
+}
+
+#projects .personal-web-card .company-logo {
+    background: rgba(95, 176, 209, 0.08) !important;
+    border: 1px solid rgba(95, 176, 209, 0.3) !important;
+    color: #9adcf5 !important;
+    box-shadow: 0 0 25px var(--web-cyan-glow) !important;
+}
+
+#projects .personal-web-card .company-tag {
+    background: rgba(95, 176, 209, 0.15) !important;
+    color: #9adcf5 !important;
+    border: 1px solid rgba(95, 176, 209, 0.3) !important;
+    box-shadow: 0 0 10px rgba(95, 176, 209, 0.1) !important;
+}
+
+/* Metallic Title */
+#projects .personal-web-card .company-title h3 {
+    background: linear-gradient(135deg, #9adcf5 0%, #3a7d97 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
+}
+
+#projects .personal-web-card .project-list {
+    grid-template-columns: repeat(2, minmax(280px, 1fr));
+    gap: 26px;
+    margin-top: 28px;
+}
+
+#projects .personal-web-card .project-card {
+    min-height: 0;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.045);
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
+#projects .personal-web-card .project-card:hover {
+    border-color: rgba(95, 176, 209, 0.46);
+    box-shadow: 0 26px 56px rgba(0, 0, 0, 0.28), 0 0 0 1px rgba(95, 176, 209, 0.08);
+}
+
+#projects .personal-web-card .project-image-wrapper {
+    aspect-ratio: 16 / 10;
+    min-height: 240px;
+    padding-top: 0;
+    border-radius: 24px 24px 0 0;
+    background: linear-gradient(145deg, rgba(95, 176, 209, 0.08), rgba(197, 160, 89, 0.06)), #070707;
+}
+
+#projects .personal-web-card .project-image-wrapper img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 22px;
+    background: transparent !important;
+}
+
+#projects .personal-web-card .project-content {
+    padding: 24px;
+    gap: 14px;
+}
+
+#projects .personal-web-card .project-content h4 {
+    font-size: 20px;
+    margin-bottom: 0;
+}
+
+#projects .personal-web-card .project-content p {
+    margin-bottom: 0;
+    line-height: 1.72;
+}
+
+#projects .personal-web-card .project-tech {
+    margin-top: auto;
+    margin-bottom: 0;
+}
+
+#projects .personal-web-card .project-content .btn-primary {
+    align-self: flex-start;
+    border-radius: 12px;
+    margin-top: 4px;
+}
+
+@media (max-width: 768px) {
+    #projects .personal-web-card .project-list {
+        grid-template-columns: 1fr !important;
+    }
+
+    #projects .personal-web-card .project-image-wrapper {
+        min-height: 190px;
+    }
+
+    #projects .personal-web-card .project-image-wrapper img {
+        padding: 18px;
+    }
+}
+
+/* ==========================================================================
+   8B. ACADEMIC PROJECT CARDS
+   ========================================================================== */
+#academic-projects {
+    padding-top: 70px;
+}
+
+#academic-projects .section-subtitle {
+    margin-bottom: 42px;
+}
+
+#academic-projects .company-card {
+    background: linear-gradient(180deg, rgba(18, 18, 18, 0.98), rgba(10, 10, 10, 0.96));
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-left: 5px solid rgba(197, 160, 89, 0.72);
+    border-radius: 28px;
+    padding: 36px;
+    overflow: hidden;
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+}
+
+#academic-projects .company-card + .company-card {
+    margin-top: 36px;
+}
+
+#academic-projects .company-card:hover {
+    border-color: rgba(197, 160, 89, 0.38);
+    border-left-color: var(--accent-gold);
+    box-shadow: 0 30px 78px rgba(0, 0, 0, 0.34), 0 0 0 1px rgba(197, 160, 89, 0.08);
+}
+
+#academic-projects .company-title {
+    align-items: flex-start;
+    background: rgba(255, 255, 255, 0.035);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 22px;
+    padding: 24px;
+    margin-bottom: 26px;
+}
+
+#academic-projects .company-title h3 {
+    font-size: 28px;
+    line-height: 1.15;
+    margin-bottom: 10px;
+}
+
+#academic-projects .company-title p {
+    max-width: 920px;
+    line-height: 1.78;
+}
+
+#academic-projects .company-logo {
+    flex: 0 0 auto;
+    width: 76px;
+    height: 76px;
+    border-radius: 16px;
+    object-fit: contain;
+    background: rgba(255, 255, 255, 0.04) !important;
+    border: 1px solid rgba(197, 160, 89, 0.25);
+    padding: 10px !important;
+}
+
+#academic-projects .project-list {
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)) !important;
+    gap: 24px;
+    margin-top: 0;
+}
+
+#academic-projects .project-card {
+    min-height: 0;
+    background: rgba(255, 255, 255, 0.045);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 22px;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.025);
+}
+
+#academic-projects .project-card:hover {
+    border-color: rgba(197, 160, 89, 0.45);
+    box-shadow: 0 22px 48px rgba(0, 0, 0, 0.28);
+}
+
+#academic-projects .project-image-wrapper {
+    aspect-ratio: 16 / 9;
+    padding-top: 0;
+    min-height: 220px;
+    border-radius: 22px 22px 0 0;
+    background: #070707;
+}
+
+#academic-projects .project-image-wrapper iframe,
+#academic-projects .project-image-wrapper img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+#academic-projects .project-image-wrapper img {
+    object-fit: contain;
+    padding: 18px;
+    background: radial-gradient(circle at center, rgba(197, 160, 89, 0.08), transparent 58%), #080808;
+}
+
+#academic-projects .project-content {
+    padding: 24px;
+    gap: 14px;
+}
+
+#academic-projects .project-content h4 {
+    font-size: 19px;
+    line-height: 1.35;
+    margin-bottom: 0;
+}
+
+#academic-projects .project-content p {
+    line-height: 1.72;
+    margin-bottom: 0;
+}
+
+#academic-projects .project-tech {
+    margin-top: auto;
+    margin-bottom: 0;
+}
+
+#academic-projects .project-content .btn-primary,
+#academic-projects .project-content .btn-secondary {
+    width: fit-content;
+    max-width: 100%;
+    margin-top: 4px;
+    border-radius: 12px;
+}
+
+#academic-projects .decode-gallery {
+    min-height: 300px;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+    padding: 14px !important;
+    background: #090909 !important;
+    border-radius: 22px 22px 0 0;
+}
+
+#academic-projects .decode-gallery img {
+    height: 82px !important;
+    aspect-ratio: 1 / 1;
+    border-radius: 8px !important;
+}
+
+@media (max-width: 768px) {
+    #academic-projects .company-card {
+        padding: 20px !important;
+        border-radius: 22px;
+    }
+
+    #academic-projects .company-title {
+        align-items: flex-start;
+        text-align: left;
+        padding: 20px;
+    }
+
+    #academic-projects .company-title h3 {
+        font-size: 24px;
+    }
+
+    #academic-projects .project-list {
+        grid-template-columns: 1fr !important;
+    }
+
+    #academic-projects .project-image-wrapper {
+        min-height: 190px;
+    }
+
+    #academic-projects .decode-gallery {
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        min-height: auto;
+    }
+
+    #academic-projects .decode-gallery img {
+        height: 78px !important;
+    }
 }
 
 
@@ -1434,4 +2660,650 @@ footer p {
         right: 20px;
         font-size: 30px;
     }
+}
+
+/* ==========================================================================
+   13. BRAND CUSTOMIZATIONS (KBN & PE SKINPRO PREMIUM ADDITIONS)
+   ========================================================================== */
+
+/* Play Button Overlay for Video Projects */
+.play-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    z-index: 2;
+    transition: var(--transition-smooth);
+    text-decoration: none;
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+}
+
+.project-image-wrapper:hover .play-overlay {
+    opacity: 1;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    background: rgba(5, 5, 5, 0.5);
+}
+
+.play-button {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #f3d28a 0%, #c5a059 100%);
+    color: #050505;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 8px 25px rgba(197, 160, 89, 0.4);
+    transform: scale(0.8);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+}
+
+.project-image-wrapper:hover .play-button {
+    transform: scale(1);
+}
+
+.play-button:hover {
+    transform: scale(1.1) !important;
+    box-shadow: 0 12px 30px rgba(197, 160, 89, 0.6);
+}
+
+.play-text {
+    margin-top: 12px;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transform: translateY(10px);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+    opacity: 0;
+}
+
+.project-image-wrapper:hover .play-text {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Play Button Color Variants (Harmonized with Photos) */
+.pink-play .play-button {
+    background: linear-gradient(135deg, #f1c1e6 0%, #dc8cce 100%) !important;
+    color: #050505 !important;
+    box-shadow: 0 8px 25px rgba(220, 140, 206, 0.4) !important;
+}
+.pink-play .play-button:hover {
+    box-shadow: 0 12px 30px rgba(220, 140, 206, 0.6) !important;
+}
+
+.blue-play .play-button {
+    background: linear-gradient(135deg, #a9d4ff 0%, #2980b9 100%) !important;
+    box-shadow: 0 8px 25px rgba(41, 128, 185, 0.4) !important;
+    color: #ffffff !important;
+}
+.blue-play .play-button:hover {
+    box-shadow: 0 12px 30px rgba(41, 128, 185, 0.6) !important;
+}
+
+.red-play .play-button {
+    background: linear-gradient(135deg, #ffa8a8 0%, #e53e3e 100%) !important;
+    box-shadow: 0 8px 25px rgba(229, 62, 62, 0.4) !important;
+    color: #050505 !important;
+}
+.red-play .play-button:hover {
+    box-shadow: 0 12px 30px rgba(229, 62, 62, 0.6) !important;
+}
+
+.bronze-play .play-button {
+    background: linear-gradient(135deg, #e5b393 0%, #935125 100%) !important;
+    box-shadow: 0 8px 25px rgba(147, 81, 37, 0.4) !important;
+    color: #ffffff !important;
+}
+.bronze-play .play-button:hover {
+    box-shadow: 0 12px 30px rgba(147, 81, 37, 0.6) !important;
+}
+
+.cyan-play .play-button {
+    background: linear-gradient(135deg, #9adcf5 0%, #3a7d97 100%) !important;
+    box-shadow: 0 8px 25px rgba(95, 176, 209, 0.4) !important;
+    color: #050505 !important;
+}
+.cyan-play .play-button:hover {
+    box-shadow: 0 12px 30px rgba(95, 176, 209, 0.6) !important;
+}
+
+.gold-play .play-button {
+    background: linear-gradient(135deg, #fff9c4 0%, #f1c40f 100%) !important;
+    box-shadow: 0 8px 25px rgba(241, 196, 15, 0.4) !important;
+    color: #050505 !important;
+}
+.gold-play .play-button:hover {
+    box-shadow: 0 12px 30px rgba(241, 196, 15, 0.6) !important;
+}
+
+/* Custom Button Styling inside KBN & PE SKINPRO */
+.kbn-card .btn-primary {
+    background: linear-gradient(135deg, #fff9c4 0%, #f1c40f 100%) !important;
+    color: #050505 !important;
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(241, 196, 15, 0.25) !important;
+    border: none !important;
+}
+.kbn-card .btn-primary:hover {
+    box-shadow: 0 8px 25px rgba(241, 196, 15, 0.45) !important;
+    transform: translateY(-2px);
+}
+
+.pe-skinpro-card .btn-primary {
+    background: linear-gradient(135deg, #f1c1e6 0%, #dc8cce 100%) !important;
+    color: #050505 !important;
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(220, 140, 206, 0.25) !important;
+    border: none !important;
+}
+.pe-skinpro-card .btn-primary:hover {
+    box-shadow: 0 8px 25px rgba(220, 140, 206, 0.45) !important;
+    transform: translateY(-2px);
+}
+
+/* Brand Specific Tech Badges */
+.kbn-card .tech-badge {
+    border-color: rgba(241, 196, 15, 0.4) !important;
+    color: #fff9c4 !important;
+    background: rgba(241, 196, 15, 0.08) !important;
+}
+.pe-skinpro-card .tech-badge {
+    border-color: rgba(220, 140, 206, 0.4) !important;
+    color: #f1c1e6 !important;
+    background: rgba(220, 140, 206, 0.08) !important;
+}
+
+/* --- BRINTV Card (Red Theme) --- */
+.brintv-card {
+    border-left: 6px solid var(--brintv-red-primary) !important;
+    transition: var(--transition-smooth);
+}
+.brintv-card:hover {
+    border-color: #ff8a8a !important;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.4), 0 0 30px var(--brintv-red-glow) !important;
+    transform: translateY(-4px);
+}
+.brintv-card::before {
+    background: radial-gradient(circle at top left, rgba(229, 62, 62, 0.18), transparent 25%) !important;
+}
+.brintv-card .company-title {
+    background: rgba(229, 62, 62, 0.06) !important;
+}
+.brintv-card .company-title h3 {
+    background: linear-gradient(135deg, #ffa8a8 0%, #e53e3e 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
+}
+.brintv-card .company-tag {
+    background: rgba(229, 62, 62, 0.15) !important;
+    color: #ffa8a8 !important;
+    border: 1px solid rgba(229, 62, 62, 0.3) !important;
+    box-shadow: 0 0 10px rgba(229, 62, 62, 0.1) !important;
+}
+.brintv-card .company-job-list li::before {
+    color: var(--brintv-red-primary) !important;
+    content: '✦' !important;
+    font-size: 14px !important;
+}
+.brintv-card .btn-primary {
+    background: linear-gradient(135deg, #ffa8a8 0%, #e53e3e 100%) !important;
+    color: #050505 !important;
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(229, 62, 62, 0.25);
+    border: none !important;
+}
+.brintv-card .btn-primary:hover {
+    box-shadow: 0 8px 25px rgba(229, 62, 62, 0.45) !important;
+    transform: translateY(-2px);
+}
+.brintv-card .tech-badge {
+    border-color: rgba(229, 62, 62, 0.4) !important;
+    color: #ffa8a8 !important;
+    background: rgba(229, 62, 62, 0.08) !important;
+}
+.brintv-card .company-logo {
+    box-shadow: 0 0 25px var(--brintv-red-glow) !important;
+    border: 1px solid rgba(229, 62, 62, 0.3) !important;
+}
+.brintv-card .company-role {
+    color: #ffa8a8 !important;
+}
+
+/* --- GEMPITA Card (Red Theme) --- */
+.gempita-card {
+    border-left: 6px solid var(--gempita-red-primary) !important;
+    transition: var(--transition-smooth);
+}
+.gempita-card:hover {
+    border-color: #ff8a8a !important;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.4), 0 0 30px var(--gempita-red-glow) !important;
+    transform: translateY(-4px);
+}
+.gempita-card::before {
+    background: radial-gradient(circle at top left, rgba(229, 62, 62, 0.18), transparent 25%) !important;
+}
+.gempita-card .company-title {
+    background: rgba(229, 62, 62, 0.06) !important;
+}
+.gempita-card .company-title h3 {
+    background: linear-gradient(135deg, #ffa8a8 0%, #e53e3e 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
+}
+.gempita-card .company-tag {
+    background: rgba(229, 62, 62, 0.15) !important;
+    color: #ffa8a8 !important;
+    border: 1px solid rgba(229, 62, 62, 0.3) !important;
+    box-shadow: 0 0 10px rgba(229, 62, 62, 0.1) !important;
+}
+.gempita-card .company-job-list li::before {
+    color: var(--gempita-red-primary) !important;
+    content: '✦' !important;
+    font-size: 14px !important;
+}
+.gempita-card .btn-primary {
+    background: linear-gradient(135deg, #ffa8a8 0%, #e53e3e 100%) !important;
+    color: #050505 !important;
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(229, 62, 62, 0.25);
+    border: none !important;
+}
+.gempita-card .btn-primary:hover {
+    box-shadow: 0 8px 25px rgba(229, 62, 62, 0.45) !important;
+    transform: translateY(-2px);
+}
+.gempita-card .tech-badge {
+    border-color: rgba(229, 62, 62, 0.4) !important;
+    color: #ffa8a8 !important;
+    background: rgba(229, 62, 62, 0.08) !important;
+}
+.gempita-card .company-logo {
+    box-shadow: 0 0 25px var(--gempita-red-glow) !important;
+    border: 1px solid rgba(229, 62, 62, 0.3) !important;
+}
+.gempita-card .company-role {
+    color: #ffa8a8 !important;
+}
+
+/* --- KCI Card (Brown Theme) --- */
+.kci-card {
+    border-left: 6px solid var(--kci-brown-primary) !important;
+    transition: var(--transition-smooth);
+}
+.kci-card:hover {
+    border-color: #e5b393 !important;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.4), 0 0 30px var(--kci-brown-glow) !important;
+    transform: translateY(-4px);
+}
+.kci-card::before {
+    background: radial-gradient(circle at top left, rgba(147, 81, 37, 0.18), transparent 25%) !important;
+}
+.kci-card .company-title {
+    background: rgba(147, 81, 37, 0.06) !important;
+}
+.kci-card .company-title h3 {
+    background: linear-gradient(135deg, #e5b393 0%, #935125 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
+}
+.kci-card .company-tag {
+    background: rgba(147, 81, 37, 0.15) !important;
+    color: #e5b393 !important;
+    border: 1px solid rgba(147, 81, 37, 0.3) !important;
+    box-shadow: 0 0 10px rgba(147, 81, 37, 0.1) !important;
+}
+.kci-card .company-job-list li::before {
+    color: var(--kci-brown-primary) !important;
+    content: '✦' !important;
+    font-size: 14px !important;
+}
+.kci-card .btn-primary {
+    background: linear-gradient(135deg, #e5b393 0%, #935125 100%) !important;
+    color: #ffffff !important;
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(147, 81, 37, 0.25);
+    border: none !important;
+}
+.kci-card .btn-primary:hover {
+    box-shadow: 0 8px 25px rgba(147, 81, 37, 0.45) !important;
+    transform: translateY(-2px);
+}
+.kci-card .tech-badge {
+    border-color: rgba(147, 81, 37, 0.4) !important;
+    color: #e5b393 !important;
+    background: rgba(147, 81, 37, 0.08) !important;
+}
+.kci-card .company-logo {
+    box-shadow: 0 0 25px var(--kci-brown-glow) !important;
+    border: 1px solid rgba(147, 81, 37, 0.3) !important;
+}
+.kci-card .company-role {
+    color: #e5b393 !important;
+}
+
+/* --- FTNEWS Card (Blue Theme) --- */
+.ftnews-card {
+    border-left: 6px solid var(--ftnews-blue-primary) !important;
+    transition: var(--transition-smooth);
+}
+.ftnews-card:hover {
+    border-color: #85c1e9 !important;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.4), 0 0 30px var(--ftnews-blue-glow) !important;
+    transform: translateY(-4px);
+}
+.ftnews-card::before {
+    background: radial-gradient(circle at top left, rgba(41, 128, 185, 0.18), transparent 25%) !important;
+}
+.ftnews-card .company-title {
+    background: rgba(41, 128, 185, 0.06) !important;
+}
+.ftnews-card .company-title h3 {
+    background: linear-gradient(135deg, #a9d4ff 0%, #2980b9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
+}
+.ftnews-card .company-tag {
+    background: rgba(41, 128, 185, 0.15) !important;
+    color: #a9d4ff !important;
+    border: 1px solid rgba(41, 128, 185, 0.3) !important;
+    box-shadow: 0 0 10px rgba(41, 128, 185, 0.1) !important;
+}
+.ftnews-card .company-job-list li::before {
+    color: var(--ftnews-blue-primary) !important;
+    content: '✦' !important;
+    font-size: 14px !important;
+}
+.ftnews-card .btn-primary {
+    background: linear-gradient(135deg, #a9d4ff 0%, #2980b9 100%) !important;
+    color: #ffffff !important;
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(41, 128, 185, 0.25);
+    border: none !important;
+}
+.ftnews-card .btn-primary:hover {
+    box-shadow: 0 8px 25px rgba(41, 128, 185, 0.45) !important;
+    transform: translateY(-2px);
+}
+.ftnews-card .tech-badge {
+    border-color: rgba(41, 128, 185, 0.4) !important;
+    color: #a9d4ff !important;
+    background: rgba(41, 128, 185, 0.08) !important;
+}
+.ftnews-card .company-logo {
+    box-shadow: 0 0 25px var(--ftnews-blue-glow) !important;
+    border: 1px solid rgba(41, 128, 185, 0.3) !important;
+}
+.ftnews-card .company-role {
+    color: #a9d4ff !important;
+}
+
+/* --- Proyek Web Pribadi Card Additional Styles --- */
+#projects .personal-web-card .btn-primary {
+    background: linear-gradient(135deg, #9adcf5 0%, #3a7d97 100%) !important;
+    color: #050505 !important;
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(95, 176, 209, 0.25) !important;
+    border: none !important;
+}
+#projects .personal-web-card .btn-primary:hover {
+    box-shadow: 0 8px 25px rgba(95, 176, 209, 0.45) !important;
+    transform: translateY(-2px);
+}
+#projects .personal-web-card .tech-badge {
+    border-color: rgba(95, 176, 209, 0.4) !important;
+    color: #9adcf5 !important;
+    background: rgba(95, 176, 209, 0.08) !important;
+}
+#projects .personal-web-card .company-role {
+    color: #9adcf5 !important;
+}
+#projects .personal-web-card .company-job-list li::before {
+    color: var(--web-cyan-primary) !important;
+    content: '✦' !important;
+    font-size: 14px !important;
+}
+
+/* Center and shrink single-project cards inside KBN and PE SKINPRO cards */
+.kbn-card .project-list,
+.pe-skinpro-card .project-list {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: stretch !important;
+}
+
+.kbn-card .project-card,
+.pe-skinpro-card .project-card {
+    width: 100% !important;
+    max-width: 360px !important;
+}
+
+@media (max-width: 768px) {
+    .kbn-card .project-list,
+    .pe-skinpro-card .project-list {
+        display: grid !important;
+    }
+    .kbn-card .project-card,
+    .pe-skinpro-card .project-card {
+        max-width: 100% !important;
+    }
+}
+
+/* KBN and PE SKINPRO use the same neutral card colors as the other cards. */
+.kbn-card,
+.pe-skinpro-card {
+    border-left-color: rgba(197, 160, 89, 0.35) !important;
+    box-shadow: none !important;
+}
+
+.kbn-card:hover,
+.pe-skinpro-card:hover {
+    border-color: rgba(197, 160, 89, 0.45) !important;
+    box-shadow: 0 26px 60px rgba(0, 0, 0, 0.38) !important;
+}
+
+.kbn-card::before,
+.pe-skinpro-card::before {
+    background: radial-gradient(circle at top left, rgba(197, 160, 89, 0.08), transparent 32%) !important;
+}
+
+.kbn-card .company-title,
+.pe-skinpro-card .company-title {
+    background: rgba(255, 255, 255, 0.03) !important;
+}
+
+.kbn-card .company-title h3,
+.pe-skinpro-card .company-title h3 {
+    background: none !important;
+    -webkit-text-fill-color: var(--text-primary) !important;
+    color: var(--text-primary) !important;
+}
+
+.kbn-card .company-tag,
+.pe-skinpro-card .company-tag {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+    box-shadow: none !important;
+    color: var(--accent-gold-light) !important;
+}
+
+.kbn-card .company-job-list li::before,
+.pe-skinpro-card .company-job-list li::before,
+.kbn-card .company-role,
+.pe-skinpro-card .company-role {
+    color: var(--accent-gold-light) !important;
+}
+
+.kbn-card .btn-primary,
+.pe-skinpro-card .btn-primary {
+    background: linear-gradient(135deg, var(--accent-gold-light) 0%, var(--accent-gold) 100%) !important;
+    box-shadow: 0 4px 15px rgba(197, 160, 89, 0.25) !important;
+}
+
+.kbn-card .btn-primary:hover,
+.pe-skinpro-card .btn-primary:hover {
+    box-shadow: 0 8px 25px rgba(197, 160, 89, 0.45) !important;
+}
+
+.kbn-card .tech-badge,
+.pe-skinpro-card .tech-badge {
+    background: rgba(255, 255, 255, 0.07) !important;
+    border-color: rgba(255, 255, 255, 0.12) !important;
+    color: var(--accent-gold-light) !important;
+}
+
+/* Open images directly in the lightbox; hide video/web overlay buttons. */
+.play-overlay {
+    display: none !important;
+}
+
+.project-image-wrapper img {
+    cursor: zoom-in;
+}
+
+/* Unify all professional project cards with the KBN neutral-gold color style. */
+.brintv-card,
+.gempita-card,
+.kci-card,
+.ftnews-card,
+#projects .personal-web-card,
+.kbn-card,
+.pe-skinpro-card {
+    border-left-color: rgba(197, 160, 89, 0.35) !important;
+    box-shadow: none !important;
+}
+
+.brintv-card:hover,
+.gempita-card:hover,
+.kci-card:hover,
+.ftnews-card:hover,
+#projects .personal-web-card:hover,
+.kbn-card:hover,
+.pe-skinpro-card:hover {
+    border-color: rgba(197, 160, 89, 0.45) !important;
+    box-shadow: 0 26px 60px rgba(0, 0, 0, 0.38) !important;
+}
+
+.brintv-card::before,
+.gempita-card::before,
+.kci-card::before,
+.ftnews-card::before,
+#projects .personal-web-card::before,
+.kbn-card::before,
+.pe-skinpro-card::before {
+    background: radial-gradient(circle at top left, rgba(197, 160, 89, 0.08), transparent 32%) !important;
+}
+
+.brintv-card .company-title,
+.gempita-card .company-title,
+.kci-card .company-title,
+.ftnews-card .company-title,
+#projects .personal-web-card .company-title,
+.kbn-card .company-title,
+.pe-skinpro-card .company-title {
+    background: rgba(255, 255, 255, 0.03) !important;
+}
+
+.brintv-card .company-title h3,
+.gempita-card .company-title h3,
+.kci-card .company-title h3,
+.ftnews-card .company-title h3,
+#projects .personal-web-card .company-title h3,
+.kbn-card .company-title h3,
+.pe-skinpro-card .company-title h3 {
+    background: none !important;
+    -webkit-text-fill-color: var(--text-primary) !important;
+    color: var(--text-primary) !important;
+}
+
+.brintv-card .company-tag,
+.gempita-card .company-tag,
+.kci-card .company-tag,
+.ftnews-card .company-tag,
+#projects .personal-web-card .company-tag,
+.kbn-card .company-tag,
+.pe-skinpro-card .company-tag {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+    box-shadow: none !important;
+    color: var(--accent-gold-light) !important;
+}
+
+.brintv-card .company-job-list li::before,
+.gempita-card .company-job-list li::before,
+.kci-card .company-job-list li::before,
+.ftnews-card .company-job-list li::before,
+#projects .personal-web-card .company-job-list li::before,
+.kbn-card .company-job-list li::before,
+.pe-skinpro-card .company-job-list li::before,
+.brintv-card .company-role,
+.gempita-card .company-role,
+.kci-card .company-role,
+.ftnews-card .company-role,
+#projects .personal-web-card .company-role,
+.kbn-card .company-role,
+.pe-skinpro-card .company-role {
+    color: var(--accent-gold-light) !important;
+}
+
+.brintv-card .btn-primary,
+.gempita-card .btn-primary,
+.kci-card .btn-primary,
+.ftnews-card .btn-primary,
+#projects .personal-web-card .btn-primary,
+.kbn-card .btn-primary,
+.pe-skinpro-card .btn-primary {
+    background: linear-gradient(135deg, var(--accent-gold-light) 0%, var(--accent-gold) 100%) !important;
+    box-shadow: 0 4px 15px rgba(197, 160, 89, 0.25) !important;
+    color: #050505 !important;
+}
+
+.brintv-card .btn-primary:hover,
+.gempita-card .btn-primary:hover,
+.kci-card .btn-primary:hover,
+.ftnews-card .btn-primary:hover,
+#projects .personal-web-card .btn-primary:hover,
+.kbn-card .btn-primary:hover,
+.pe-skinpro-card .btn-primary:hover {
+    box-shadow: 0 8px 25px rgba(197, 160, 89, 0.45) !important;
+}
+
+.brintv-card .tech-badge,
+.gempita-card .tech-badge,
+.kci-card .tech-badge,
+.ftnews-card .tech-badge,
+#projects .personal-web-card .tech-badge,
+.kbn-card .tech-badge,
+.pe-skinpro-card .tech-badge {
+    background: rgba(255, 255, 255, 0.07) !important;
+    border-color: rgba(255, 255, 255, 0.12) !important;
+    color: var(--accent-gold-light) !important;
+}
+
+.brintv-card .company-logo,
+.gempita-card .company-logo,
+.kci-card .company-logo,
+.ftnews-card .company-logo,
+#projects .personal-web-card .company-logo {
+    border-color: rgba(197, 160, 89, 0.25) !important;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25) !important;
 }
